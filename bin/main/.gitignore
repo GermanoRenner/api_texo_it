@@ -1,0 +1,10 @@
+/application.properties
+/com/
+/templates/
+/data.sql
+/models/
+/database.sql
+/database.csv
+/movielist.csv
+/dataset.csv
+/schema.sql
