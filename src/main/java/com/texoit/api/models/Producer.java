@@ -8,6 +8,7 @@ public class Producer {
 	private Integer previousWin;
 	private Integer followingWin;
 	
+	public Producer() { }
 	public Producer(String producer) {
 		this.producer = producer;
 	}

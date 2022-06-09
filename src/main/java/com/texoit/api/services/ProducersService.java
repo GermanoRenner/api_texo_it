@@ -21,6 +21,7 @@ public class ProducersService {
 	
 	private static final Logger LOGGER = LogManager.getLogger(ProducersService.class);
 	private static final String REGEX_SPLIT_PRODUCERS = ",|and ";
+	private static final Integer SIZE_WINNER_RESPONSE = 3;
 	
 	@Autowired
 	private MoviesRepository moviesRepository;
@@ -30,16 +31,17 @@ public class ProducersService {
 		var winnerProducers = getWinnersProducers();
 		
 		var winnerProducersMoreThanOne = winnerProducers.stream().filter(winner -> winner.getInterval() != null).toList();
-//		var winnerProducersOnlyOnce = winnerProducers.stream().filter(winner -> winner.getInterval() == null).toList();
+		var winnerProducersOnlyOnce = winnerProducers.stream().filter(winner -> winner.getInterval() == null).toList();
 
 		var min = winnerProducersMoreThanOne.stream().sorted(Comparator.comparingInt(Producer::getInterval))
-		  .toList().subList(0, 3);
+		  .toList().subList(0, getSubListWinnerSize(winnerProducersMoreThanOne));
 		
 		var max = winnerProducersMoreThanOne.stream().sorted(Comparator.comparingInt(Producer::getInterval).reversed())
-				  .toList().subList(0, 3);
-		
+				  .toList().subList(0, getSubListWinnerSize(winnerProducersMoreThanOne));
+				
 		response.setMax(max);
 		response.setMin(min);
+		response.setWinnersOnce(winnerProducersOnlyOnce);
 		
 		return response;
 	}
@@ -83,6 +85,10 @@ public class ProducersService {
 			});
 		});
 		return producerList;
+	}
+	
+	private Integer getSubListWinnerSize(List<Producer> list) {
+		return list.size() >= SIZE_WINNER_RESPONSE ? SIZE_WINNER_RESPONSE : list.size();
 	}
 	
 	private Integer getMinYearMovie(List<Movie> producerMovies) {
