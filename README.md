@@ -1,5 +1,3 @@
-<img align="center" width="100%" src="https://images.radio.com/aiu-media/GettyImages502922876-7caa62f8-4710-4ced-9390-ceb5435cac01.jpg">
-
 # Golden Raspeberry Awards - Winners
 Este projeto se resume em uma API que tem o intuito de demonstrar os produtores ganhadores do prêmio em questão e classificar o período de anos entre os maiores vencedores.
 
