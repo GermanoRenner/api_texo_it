@@ -34,7 +34,7 @@ Onde a primeira linha representa o cabeçalho obrigatoriamente.<br>
 **Para execução/utilização do projeto foi disponibilizado um .jar do projeto na pasta raiz. Para executar siga os comandos abaixo:**
 *Execução do Projeto:*
 ```java
-java -jar texoit-api-1.0.jar
+java -jar texoit-api-1.0.jar // Jar comitado apenas para testes.
 ```
 
 *Build do Projeto via gradle:*
