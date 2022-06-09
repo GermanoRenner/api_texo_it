@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.texoit.api.models.Producer;
@@ -26,8 +27,8 @@ public class ProducersController extends BaseController {
 	}
 	
 	@GetMapping("/winnersResponse")
-	public ResponseEntity<WinnersResponse> getWinnersResponse() {
-		var producers = producersService.getWinnersResponse();	
+	public ResponseEntity<WinnersResponse> getWinnersResponse(@RequestParam(required = false) Integer limit) {
+		var producers = producersService.getWinnersResponse(limit);	
 		return ResponseEntity.ok().body(producers);
 	}
 }
