@@ -17,7 +17,7 @@ Este projeto se resume em uma API que tem o intuito de demonstrar os produtores 
     * Eclipse - (https://www.eclipse.org/downloads/)
 3. Agora basta abrir o eclipse e importar o projeto.
 
-## Funcionamento :wrench:
+## Funcionamento :gear:
 Ao realizar a inicialização da API uma base inicial (resources/dataset.csv) é carregada em um banco de dados em memória (H2 Database). É disponibilizado alguns endpoints para fazer o CRUD dos filmes manualmente (Acesso local: http://localhost:9180/api/swagger-ui.html). <br>
 Além da manipulação dos filmes também existe um funcionalidade para **IMPORTAÇÃO** de uma base em formato csv, que faz uma carga completa nos dados da base.
 
@@ -32,7 +32,7 @@ year;title;studios;producers;winner
 Onde a primeira linha representa o cabeçalho obrigatoriamente.<br>
 **OBS:** Esta importação não contempla regras de negócio, como por exemplo: validação para títulos duplicados. **E a cada nova importação a base de dados antiga é substituída pelo novo arquivo importado.**
 
-## Execução :wrench:
+## Execução :fast_forward:
 **Para execução/utilização do projeto foi disponibilizado um .jar do projeto na pasta raiz. Para executar siga os comandos abaixo:**
 *Execução do Projeto:*
 ```java
