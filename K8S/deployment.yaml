@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: texoit-api-deployment
+  labels:
+    app: texoit-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: texoit-api
+  template:
+    metadata:
+      labels:
+        app: texoit-api
+    spec:
+      containers:
+      - name: texoit-api
+        image: gcr.io/erudite-justice-352902/texoit-api
+        ports:
+        - containerPort: 9180
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: texoit-api
+spec:
+  selector:
+    app: texoit-api
+  ports:
+    - port: 9180
+      targetPort: 9180
+  type: LoadBalancer

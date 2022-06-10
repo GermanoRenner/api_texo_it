@@ -7,6 +7,7 @@ Este projeto se resume em uma API que tem o intuito de demonstrar os produtores 
 >* Gradle 7.0
 >* Swagger
 >* H2 Database
+>* Kubernetes
 
 ## Configurações Ambiente :wrench:
 1. Clone o Projeto em um diretório local.
@@ -16,7 +17,7 @@ Este projeto se resume em uma API que tem o intuito de demonstrar os produtores 
 3. Agora basta abrir o eclipse e importar o projeto.
 
 ## Funcionamento :gear:
-Ao realizar a inicialização da API uma base inicial (resources/dataset.csv) é carregada em um banco de dados em memória (H2 Database). É disponibilizado alguns endpoints para fazer o CRUD dos filmes manualmente (Acesso local: http://localhost:9180/api/swagger-ui.html). <br>
+Ao realizar a inicialização da API uma base inicial (resources/dataset.csv) é carregada em um banco de dados em memória (H2 Database). É disponibilizado alguns endpoints para fazer o CRUD dos filmes manualmente **(Acesso local: http://localhost:9180/api/swagger-ui.html | Acesso Remoto: http://34.121.35.215:9180/api/swagger-ui.html)**. <br>
 Além da manipulação dos filmes também existe um funcionalidade para **IMPORTAÇÃO** de uma base em formato csv, que faz uma carga completa nos dados da base.
 
 **@ Detalhes da Importação:**
@@ -31,7 +32,7 @@ Onde a primeira linha representa o cabeçalho obrigatoriamente.<br>
 **OBS:** Esta importação não contempla regras de negócio, como por exemplo: validação para títulos duplicados. **E a cada nova importação a base de dados antiga é substituída pelo novo arquivo importado.**
 
 ## Execução :fast_forward:
-**Para execução/utilização do projeto foi disponibilizado um .jar do projeto na pasta raiz. Para executar siga os comandos abaixo:**
+**Para execução/utilização localmente do projeto foi disponibilizado um .jar do projeto na pasta raiz. Para executar siga os comandos abaixo:**
 *Execução do Projeto:*
 ```java
 java -jar texoit-api-1.0.jar // Jar comitado apenas para testes.
@@ -46,5 +47,6 @@ java -jar texoit-api-1.0.jar // Jar comitado apenas para testes.
 ```java
 ./gradlew test
 ```
-
 **OBS:** Para as execuções é necessário o ambiente configurado com Java 17 e Gradle 7.4 .
+
+**A API também se encontra online no seguinte endereço: *http://34.121.35.215:9180/api/swagger-ui.html***
