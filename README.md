@@ -1,4 +1,6 @@
-# Golden Raspeberry Awards - Winners
+
+# Golden Raspeberry Awards - Winners [![CodeFactor](https://www.codefactor.io/repository/github/germanorenner/api_texo_it/badge)](https://www.codefactor.io/repository/github/germanorenner/api_texo_it)
+
 Este projeto se resume em uma API que tem o intuito de demonstrar os produtores ganhadores do prêmio em questão e classificar o período de anos entre os maiores vencedores.
 
 ## Tecnologias :computer:
